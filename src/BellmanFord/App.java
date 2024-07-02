@@ -7,36 +7,31 @@ public class App {
   public static void main(String[] args) {
     List<Vertex> vertexList = new ArrayList<>();
 
-    Vertex va = new Vertex("A");
-    Vertex vb = new Vertex("B");
-    Vertex vc = new Vertex("C");
-    Vertex vd = new Vertex("D");
-    Vertex ve = new Vertex("E");
+    Vertex vR = new Vertex("R");
+    Vertex vS = new Vertex("S");
+    Vertex vT = new Vertex("T");
+    Vertex vU = new Vertex("U");
 
-    vertexList.add(va);
-    vertexList.add(vb);
-    vertexList.add(vc);
-    vertexList.add(vd);
-    vertexList.add(ve);
+    vertexList.add(vR);
+    vertexList.add(vS);
+    vertexList.add(vT);
+    vertexList.add(vU);
 
     List<Edge> edgeList = new ArrayList<>();
-    edgeList.add(new Edge(-1, va, vb));
-    edgeList.add(new Edge(4, va, vc));
+    edgeList.add(new Edge(3, vR, vS));
+    edgeList.add(new Edge(7, vR, vT));
+    edgeList.add(new Edge(5, vR, vU));
 
-    edgeList.add(new Edge(3, vb, vc));
-    edgeList.add(new Edge(2, vb, vd));
-    edgeList.add(new Edge(2, vb, ve));
+    edgeList.add(new Edge(3, vS, vT));
+    edgeList.add(new Edge(1, vS, vU));
 
-    edgeList.add(new Edge(1, vd, vb));
-    edgeList.add(new Edge(5, vd, vc));
-
-    edgeList.add(new Edge(-3, ve, vd));
+    edgeList.add(new Edge(1, vU, vT));
 
     BellmanFord bellmanFord = new BellmanFord(vertexList, edgeList);
-    bellmanFord.bellmanFord(va);
+    bellmanFord.bellmanFord(vR);
 
     for (Vertex v : vertexList) {
-      System.out.println("Rota mais curta de A até " + v.getName() + ": " + bellmanFord.getShortestPathTo(v) + "\n");
+      System.out.println("Rota mais curta de R até " + v.getName() + ": " + bellmanFord.getShortestPathTo(v) + "\n");
     }
   }
 }
