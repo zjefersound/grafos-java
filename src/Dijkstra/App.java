@@ -11,29 +11,22 @@ public class App {
     Vertex vG = new Vertex("G");
     Vertex vH = new Vertex("H");
 
-    vA.addNeighbor(new Edge(20, vA, vB));
-    vA.addNeighbor(new Edge(80, vA, vD));
-    vA.addNeighbor(new Edge(90, vA, vG));
+    vA.addNeighbor(new Edge(12, vA, vB));
+    vA.addNeighbor(new Edge(4, vA, vC));
 
-    vB.addNeighbor(new Edge(10, vB, vF));
+    vB.addNeighbor(new Edge(5, vB, vD));
+    vB.addNeighbor(new Edge(3, vB, vE));
 
-    vC.addNeighbor(new Edge(10, vC, vD));
-    vC.addNeighbor(new Edge(50, vC, vF));
-    vC.addNeighbor(new Edge(20, vC, vH));
+    vC.addNeighbor(new Edge(2, vC, vD));
+    vC.addNeighbor(new Edge(6, vC, vF));
 
-    vD.addNeighbor(new Edge(10, vD, vC));
-    vD.addNeighbor(new Edge(40, vD, vF));
-    vD.addNeighbor(new Edge(20, vD, vG));
+    vD.addNeighbor(new Edge(8, vD, vG));
 
-    vE.addNeighbor(new Edge(50, vE, vB));
-    vE.addNeighbor(new Edge(30, vE, vG));
+    vE.addNeighbor(new Edge(7, vE, vH));
 
-    vF.addNeighbor(new Edge(10, vF, vC));
-    vF.addNeighbor(new Edge(40, vF, vD));
+    vF.addNeighbor(new Edge(5, vF, vG));
 
-    vG.addNeighbor(new Edge(20, vG, vA));
-    vG.addNeighbor(new Edge(20, vG, vD));
-
+    vG.addNeighbor(new Edge(3, vG, vH));
     DijkstraAlgorithm dijkstraAlgorithm = new DijkstraAlgorithm();
     dijkstraAlgorithm.computePaths(vA);
 
